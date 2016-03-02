@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+# List of the festivals
+def festival_list(request):
+    return render(request, 'festivals/festival_list.html', {})
