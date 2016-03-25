@@ -78,3 +78,5 @@ src/*.egg-info
 settings.py
 *.json
 
+# uploaded files (images) should be ignored
+uploads/*
