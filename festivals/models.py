@@ -7,6 +7,7 @@ class Festival(models.Model):
     description = models.TextField()
     start_date = models.DateField()
     end_date = models.DateField()
+    logo = models.ImageField(upload_to='uploads/', default='/uploads/leeg.png')
 
     def __str__(self):
         return self.name

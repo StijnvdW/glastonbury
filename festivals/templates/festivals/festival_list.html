@@ -58,7 +58,7 @@
                 {% for festival in festivals %}
                 <div class="col-sm-6 col-md-4">
                         <div class="thumbnail">
-                            <!--<img src="..." alt="..." />-->
+                            <img src="{{ festival.logo.url }}" alt="{{ festival.name }}" />
                             <div class="caption">
                                 <h3>{{ festival.name }}</h3>
                                 <p>
