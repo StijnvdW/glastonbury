@@ -1,5 +1,9 @@
 {% extends 'festivals/layout.html' %}
 
+{% block nav-festivals %}
+    <li class="active"><a href="/">Festivals<span class="sr-only">(current)</span></a></li>
+{% endblock %}
+
 {% block content %}
     <!-- Inhoud -->
     <div class="container">
@@ -8,17 +12,22 @@
         </div>
 
         <div class="row">
-            <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
-                        <img src="{{ festival.logo.url }}" alt="{{ festival.name }}" />
-                        <div class="caption">
-                            <h3>{{ festival.name }}</h3>
-                            <p>
-                                {{ festival.description|linebreaks }}
-                            </p>
-                        </div>
+            <div class="col-md-8">
+                <h3>Omschrijving</h3>
+                <p>
+                    {{ festival.description|linebreaks }}
+                </p>
 
-                    </div>
+                <h3>Artiesten</h3>
+                {% for artist in festival.performers.all %}
+                    {{ artist }}
+                {% endfor %}
+            </div>
+            <div class="col-md-4">
+                <h3>Wanneer:</h3>
+                <p>
+                    {{ festival.start_date }} - {{ festival.end_date}}
+                </p>
             </div>
         </div>
     </div>

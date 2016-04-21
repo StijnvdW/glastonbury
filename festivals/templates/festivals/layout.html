@@ -22,6 +22,7 @@
         <link rel="stylesheet" href="{% static 'festivals/css/festivals.css' %}"/>
     </head>
     <body>
+        {% block nav %}
         <!-- Navbarke -->
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
@@ -33,13 +34,17 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Glastonbury</a>
+                    <a class="navbar-brand" href="/">Glastonbury</a>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <!-- Linkjes links -->
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Festivals<span class="sr-only">(current)</span></a></li>
-                        <li><a href="/">Artiesten</a></li>
+                        {% block nav-festivals %}
+                            <li><a href="/">Festivals<span class="sr-only">(current)</span></a></li>
+                        {% endblock %}
+                        {% block nav-artists %}
+                            <li><a href="/">Artiesten</a></li>
+                        {% endblock %}
                     </ul>
                     <!-- Linkjes rechts -->
                     <ul class="nav navbar-nav navbar-right">
@@ -48,6 +53,7 @@
                 </div>
             </div>
         </nav>
+        {% endblock %}
         <!-- Inhoud -->
         {% block content %}
         {% endblock content %}
