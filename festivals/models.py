@@ -3,7 +3,7 @@ from django.db import models
 # Artist
 class Artist(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
-    name= models.CharField(max_length=50)
+    name = models.CharField(max_length=50)
     record_label = models.CharField(max_length=50)
 
     def __str__(self):
