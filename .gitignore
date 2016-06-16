@@ -75,7 +75,7 @@ target/
 bin
 src/*.egg-info
 *.pyc
-settings.py
+# settings.py
 *.json
 
 # uploaded files (images) should be ignored
